@@ -1,7 +1,7 @@
 import sys
 
 from indexes.utils import ValueWindow
-from models.utils import DateValue, MA
+from models.utils import DateValue, EMA
 
 
 def get_close(m):
@@ -72,7 +72,7 @@ def get_d(kd_n, ks):
         last_d = 50
         if not 0 == len(ds):
             last_d = ds[-1].get_value()
-        d = MA(d_k.get_value(), last_d, 1 / kd_n, d_k.get_date())
+        d = EMA(d_k.get_value(), last_d, 1 / kd_n, d_k.get_date())
         ds.append(d)
         date_d[d.get_date()] = d
     return date_d
@@ -84,7 +84,7 @@ def get_k(kd_n, rsvs):
         last_k = 50
         if not 0 == len(ks):
             last_k = ks[-1].get_value()
-        ks.append(MA(k_rsv.get_value(), last_k, 1 / kd_n, k_rsv.get_date()))
+        ks.append(EMA(k_rsv.get_value(), last_k, 1 / kd_n, k_rsv.get_date()))
     return ks
 
 

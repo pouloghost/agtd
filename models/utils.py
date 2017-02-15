@@ -33,6 +33,6 @@ class DateValue:
         return '\t'.join([str(self.__date), str(self.__value)])
 
 
-class MA(DateValue):
+class EMA(DateValue):
     def __init__(self, rsv, last, alpha, date):
         DateValue.__init__(self, date, alpha * rsv + (1 - alpha) * last)

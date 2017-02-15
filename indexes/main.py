@@ -1,10 +1,10 @@
-from indexes.kdj import calculate as c
+from indexes.bias import calculate as c
 from models.ag_model import AG
 from models.utils import *
 
 
 def calculate(vals):
-    return c(vals, 9, 3)
+    return c(vals, 6)
 
 
 if __name__ == '__main__':
