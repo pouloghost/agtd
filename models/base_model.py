@@ -48,6 +48,15 @@ class BaseModel:
     def get_diff(self):
         return self.__diff
 
+    def get_close(self):
+        return self.__close
+
+    def get_high(self):
+        return self.__high
+
+    def get_low(self):
+        return self.__low
+
 
 if __name__ == '__main__':
     print("AG", BaseModel(
